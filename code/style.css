@@ -32,20 +32,28 @@ body {
 .logo {
   font-family: 'Courier New', Courier, monospace;
   color: black;
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 500;
+  padding-top: 2rem;
 
 }
 
-.navbar-menu.active {
-  display: flex;
-  justify-content: end;
-  padding-top: 0.5rem;
-  padding-right: 1rem;
+.navbarMenu {
   font-family: 'Courier New', Courier, monospace;
   color: black;
-
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 2rem;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 p {
   font-family: 'Courier New', Courier, monospace;
@@ -105,7 +113,6 @@ h3 {
   font-weight: bold;
   font-size: 2rem;
   line-height: 5rem;
-  padding-left: 3rem;
   margin-top: 2rem;
   background-color: black;
 
@@ -116,11 +123,13 @@ h3 {
   color: white;
   margin-bottom: -2rem;
   text-align: center;
+  padding-bottom: 2rem;
 
 }
 
-ol {
+ol li {
   padding-left: 2rem;
+  list-style: decimal inside;
 }
 
 ul {
@@ -185,7 +194,7 @@ ul {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: end;
+  justify-content: center;
   padding: 3rem;
   height: 550px;
   background-image: url("/technigo-project-news-site/bilder/Johan_Mark_Tone_Yellow.jpg");
@@ -262,8 +271,20 @@ ul {
   }
 
   .topfourheadlines>ul {
-
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .topfive ol {
+    /*här kmr din wrapping! Eller snarare, jag sket i den och gjorde det till två kolumner bara.*/
+    columns: 2;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+
+  .topfive>ol>li {
+    text-align: left;
   }
 
 }
@@ -279,11 +300,6 @@ ul {
 
   }
 
-  .topfive {
-    flex-direction: column;
-    flex-wrap: wrap;
-    max-height: 20vh;
-  }
 
   .topfourheadlines>ul {
     display: flex;
@@ -292,5 +308,14 @@ ul {
     margin-top: 2rem;
   }
 
-  .two-stories {}
+  .two-stories {
+    justify-content: center;
+
+  }
+
+  .end-stories-one,
+  .end-stories-two {
+    flex: 1;
+
+  }
 }
